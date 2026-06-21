@@ -1,0 +1,24 @@
+name: False concurrency
+
+on: workflow_dispatch
+
+concurrency:
+  group: deploy-master
+  cancel-in-progress: false
+
+jobs:
+  false-concurrency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: False concurrency checking
+        run: |
+          echo "Hello world"
+          pwd
+          ls -lrth
+          touch anil.txt
+          ls -lrth
+          time
+          sleep 30s
+
+      - name: Completed false concurrency
+        run: echo "done"
