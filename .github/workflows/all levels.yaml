@@ -11,14 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CITY: Noida
-      COUNTRY: India
+      BRAND: India
 
     steps:
       - name: Checking for step level vars
         env:
           COMPANY: Anil tech
           LOCATION: Austrila
-        run: echo "Hi Im Dhage Anil Kumar, Company name is $COMPANY and located in $LOCATION" > anil.txt
+        run: |
+          echo "$BRAND and $CITY"
+          echo "Hi Im Dhage Anil Kumar, Company name is $COMPANY and located in $LOCATION" > anil.txt
 
       - name: Show the file
         run: cat anil.txt
@@ -33,7 +35,7 @@ jobs:
           pwd
           date
           ls -lrth
-          echo "Hii Im DHage Anil Kumar, Im from $CITY,$COUNTRY"
+          echo "Hii Im DHage Anil Kumar, Im from $CITY and $BRAND"
 
   workflow-level-3:
     runs-on: ubuntu-latest
