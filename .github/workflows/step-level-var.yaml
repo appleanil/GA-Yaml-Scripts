@@ -1,0 +1,17 @@
+name: Step Level variables
+
+on: workflow_dispatch
+
+jobs:
+  step-level-var:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: step level variables
+        env:
+          CITY: Adoni
+          COUNTRY: India
+        run: echo "Hii Im Dhage Anil Kumar Im from $CITY and I lives on $COUNTRY" > anil.txt
+
+      - name: Show the file
+        run: cat anil.txt
