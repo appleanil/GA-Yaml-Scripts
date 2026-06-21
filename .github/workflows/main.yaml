@@ -1,0 +1,42 @@
+name: New-Master
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  single-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show the name
+        run: uname -a
+
+      - name: Show the files
+        run: |
+          ls -lrth
+          touch anil.txt
+          echo "Hi, my name is Dhage Anil Kumar and I'm learning GitHub Actions" > anil.txt
+          cat anil.txt
+
+      - name: Variables
+        env:
+          CITY: Adoni
+          COUNTRY: India
+        run: echo "Anil is in $CITY and lives in $COUNTRY"
+
+  next-job:
+    runs-on: ubuntu-latest
+
+    env:
+      COMPANY: Adoni Tech
+      COUNTRY: NewZealand
+
+    steps:
+      - name: Variables Job Level
+        run: echo "Anil company name is $COMPANY and the company is in $COUNTRY"
+
+      - name: Again Variables
+        run: echo "Anil is going to $COUNTRY and working in $COMPANY"
