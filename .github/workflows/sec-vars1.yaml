@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Showing the Secrets
         run: | 
-          echo "My name is $NAME and password is $password" > anil.txt
-          echo "my name is $NAME and password is $password.
+          echo "My name is $NAME and password is $PASSWORD" > anil.txt
+          echo "my name is $NAME and password is $PASSWORD.
 
       - name: Showing the variables
         run: |
