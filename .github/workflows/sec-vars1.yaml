@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Showing the Secrets
         run: |
-          echo "My name is ${{ secrets.NAME }} and password is ${{ secrets.PASSWORD }}" > anil.txt
+          echo "My name is ${{ secrets.NAME }} and password is ${{ secrets.VALUE }}" > anil.txt
           cat anil.txt
 
       - name: Showing the Variables
