@@ -1,0 +1,26 @@
+name: Example for concurrency
+
+on: workflow_dispatch
+
+concurrency:
+  group: deploy-master
+  cancel-in-progress: true
+
+jobs:
+  concurrency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking for ConCurrency
+        run: |
+          echo "hii im Dhage Anil Kumar"
+          echo "hlo world, im learning Devops"
+          echo "Hello God, Please through me in hell"
+          sleep 50s
+          pwd
+          date
+          uptime
+
+      - name: Completed ConCurrency
+        run: echo "done"
+
+        
