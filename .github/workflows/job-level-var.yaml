@@ -18,4 +18,4 @@ jobs:
           cat anil.txt
           pwd
           date
-          la -lrth
+          ls -lrth
