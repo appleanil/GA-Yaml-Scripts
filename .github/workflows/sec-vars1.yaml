@@ -1,6 +1,6 @@
 name: Simple Secrets and Variables in repo-level
 
-on: 
+on:
   workflow_dispatch:
 
 jobs:
@@ -9,11 +9,11 @@ jobs:
 
     steps:
       - name: Showing the Secrets
-        run: | 
-          echo "My name is ${{ secrets.NAME }} and password is ${{ secrets.PASSWORD }}" > anil.txt
-          echo "my name is ${{ secrets.NAME }} and password is ${{ secrets.PASSWORD}}".
-
-      - name: Showing the variables
         run: |
-          echo "My name is ${{ vars.NAME }} and My role is ${{ vars.ROLE }}" > kumar.txt
-          echo "My name is ${{ vars.NAME }} and My role is ${{ vars.ROLE }}".
+          echo "My name is ${{ secrets.NAME }} and password is ${{ secrets.PASSWORD }}" > anil.txt
+          cat anil.txt
+
+      - name: Showing the Variables
+        run: |
+          echo "My name is ${{ vars.NAME }} and my role is ${{ vars.ROLE }}" > kumar.txt
+          cat kumar.txt
