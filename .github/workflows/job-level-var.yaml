@@ -1,0 +1,21 @@
+name: Jobs level Variables
+
+on: workflow_dispatch
+
+jobs:
+  job-level-var:
+    runs-on: ubuntu-latest
+    env:
+      CITY: Adoni
+      COMPANY: Aneel tech
+
+    steps:
+      - name: Jobs level Variables
+        run: echo "Hii Im Dhage Anil Kumar and Im working in $COMPANY and i lives in $CITY" > anil.txt
+
+      - name: Show the file
+        run: |
+          cat anil.txt
+          pwd
+          date
+          la -lrth
