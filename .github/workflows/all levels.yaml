@@ -19,11 +19,13 @@ jobs:
           COMPANY: Anil tech
           LOCATION: Austrila
         run: |
-          echo "$BRAND and $CITY"
+          echo "$BRAND and $CITY" > kumar.txt
           echo "Hi Im Dhage Anil Kumar, Company name is $COMPANY and located in $LOCATION" > anil.txt
 
       - name: Show the file
-        run: cat anil.txt
+        run: | 
+          cat kumar.txt
+          cat anil.txt
 
   job-level-2:
     runs-on: ubuntu-latest
