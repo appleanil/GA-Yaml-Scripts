@@ -3,7 +3,7 @@ name: Checking for Check-out
 on: workflow_dispatch
 
 jobs:
-  checking-for check-out:
+  checking-for-check-out:
     runs-on: ubuntu-latest
 
     steps:
