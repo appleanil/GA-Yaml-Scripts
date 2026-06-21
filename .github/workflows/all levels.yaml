@@ -1,0 +1,44 @@
+name: Showing Workflow, Job and Step Level variables
+
+on: workflow_dispatch
+
+env:
+  CITY: Adoni
+  COUNTRY: NewZealand
+  
+jobs:
+  step-level-1:
+    runs-on: ubuntu-latest
+    env:
+      CITY: Noida
+      COUNTRY: India
+
+    steps:
+      - name: Checking for step level vars
+        env:
+          COMPANY: Anil tech
+          LOCATION: Austrila
+        run: echo "Hi Im Dhage Anil Kumar, Company name is $COMPANY and located in $LOCATION" > anil.txt
+
+      - name: Show the file
+        run: cat anil.txt
+
+  job-level-2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking for job level vars
+        run: |
+          pwd
+          date
+          ls -lrth
+          echo "Hii Im DHage Anil Kumar, Im from $CITY,$COUNTRY"
+
+  workflow-level-3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking for workflow vars
+        run: |
+          echo "Hii Im Dhage Anil Kumar and this is workflow-level, $CITY and $COUNTRY" > anil.txt
+          cat anil.txt
+  
