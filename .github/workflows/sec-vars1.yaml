@@ -1,6 +1,7 @@
 name: Simple Secrets and Variables in repo-level
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
 
 jobs:
   sec-vars-repo-level:
