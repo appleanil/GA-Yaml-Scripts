@@ -9,10 +9,10 @@ jobs:
     steps:
       - name: Showing the Secrets
         run: | 
-          echo "My name is $NAME and password is $PASSWORD" > anil.txt
-          echo "my name is $NAME and password is $PASSWORD.
+          echo "My name is ${{ secrets.NAME }} and password is ${{ secrets.PASSWORD }}" > anil.txt
+          echo "my name is ${{ secrets.NAME }} and password is ${{ secrets.PASSWORD}}.
 
       - name: Showing the variables
         run: |
-          echo "My name is $NAME and My role is $ROLE" > kumar.txt
-          echo "My name is $NAME and My role is $ROLE".
+          echo "My name is ${ vars.NAME }} and My role is ${{ vars.ROLE }}" > kumar.txt
+          echo "My name is ${{ vars.NAME }} and My role is ${{ vars.ROLE }}".
