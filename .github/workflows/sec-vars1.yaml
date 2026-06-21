@@ -11,7 +11,7 @@ jobs:
       - name: Showing the Secrets
         run: | 
           echo "My name is ${{ secrets.NAME }} and password is ${{ secrets.PASSWORD }}" > anil.txt
-          echo "my name is ${{ secrets.NAME }} and password is ${{ secrets.PASSWORD}}.
+          echo "my name is ${{ secrets.NAME }} and password is ${{ secrets.PASSWORD}}".
 
       - name: Showing the variables
         run: |
