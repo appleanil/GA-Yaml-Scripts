@@ -15,5 +15,5 @@ jobs:
 
       - name: Showing the Variables
         run: |
-          echo "My name is ${{ vars.NAME }} and my role is ${{ vars.VALUES }}" > kumar.txt
+          echo "My name is ${{ vars.NAME }} and my role is ${{ vars.VALUE }}" > kumar.txt
           cat kumar.txt
