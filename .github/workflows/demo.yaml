@@ -90,6 +90,21 @@ jobs:
 
       - name: Show th file
         run: cat artifact.txt
+
+
+  Repo-level-varibables:
+    runs-on: ubuntu-latest
+    needs: download-artifact
+    steps:
+      - name: Repo-level-Variables
+        run: |
+          echo "Hii This is Repo level variables $ANIL"
+          echo "Hii this second steo Repo level varibables $KUMAR"
+
+      - name: Repo-level-Secrets
+        run: |
+          echo "This is screts in file name is $FILE"
+          echo  "This is second file name is $TEXT"
         
     
 
