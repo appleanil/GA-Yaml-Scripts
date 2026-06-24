@@ -1,20 +1,21 @@
-name: Simple Checkout Github Actions
+name: Simple Checkout GitHub Actions
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   Checkout-Job:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Creata a file
-        run: echo "Hii Im Dhage Anil Kumar and Im Learning Github Actions with Devops" > anil.txt
+      - name: Create a file
+        run: echo "Hi, I'm Dhage Anil Kumar and I'm learning GitHub Actions with DevOps" > anil.txt
 
-      - name: Using Checkout Actions
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Show the files
+      - name: Show Files
         run: ls -lrth
 
-      - name: Display the file
+      - name: Display Repository File
         run: cat Github-Actions-pratice.txt
