@@ -1,0 +1,23 @@
+name: Matrix and Node Version with Region
+
+on: workflow_dispatch
+
+jobs:
+  Matrix-Node-Regions:
+    runs-on: ${{ matrix.region }}
+    strategy:
+      matrix:
+        region: [us-east, us-west, us-north, us-south]
+        Node: [1, 2]
+
+    steps:
+      - name: AWS Regions
+        run: |
+          echo "AWS Regions: ${{ matrix.region }}"
+          echo "Hii This is Matrix and Node regions"
+          echo "Hii My name is Dhage Anil Kumar"
+          pwd
+          time
+          date
+          uptime
+          sleep 10s
