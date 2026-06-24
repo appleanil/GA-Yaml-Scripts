@@ -1,0 +1,13 @@
+name: Matrix
+
+on: workflow_dispatch
+
+jobs:
+  matrix:
+    runs-on: ${{ matrix.anil }}
+    strategy:
+      matrix:
+        anil: [ubuntu-latest, windows-latest]
+    steps:
+      - name: print Anil
+        run: echo "running on ${{ matrix.anil }}"
