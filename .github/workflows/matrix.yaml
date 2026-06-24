@@ -3,11 +3,11 @@ name: Matrix
 on: workflow_dispatch
 
 jobs:
-  matrix:
+  Matrix:
     runs-on: ${{ matrix.anil }}
     strategy:
       matrix:
-        anil: [ubuntu-latest, windows-latest]
+        anil: [ubuntu-latest, mac-latest]
     steps:
-      - name: print Anil
-        run: echo "running on ${{ matrix.anil }}"
+      - name: Print OS
+        run: echo "Running on... ${{ matrix.anil }}"
