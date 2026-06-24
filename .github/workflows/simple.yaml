@@ -16,4 +16,4 @@ jobs:
         run: cat anil.txt
 
       - name: Some Linux commands
-        run: sleeps 10s
+        run: sleep 10s
