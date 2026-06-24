@@ -13,4 +13,4 @@ jobs:
         run: ls -lrth
 
       - name: Display the file
-        run: cat Github-Actions-pratice.txt
+        run: cat Github-Actions-practice.txt
