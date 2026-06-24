@@ -7,14 +7,14 @@ jobs:
     runs-on: ${{ matrix.region }}
     strategy:
       matrix:
-        region: [us-east, us-west, us-north, us-south]
-        Node: [1, 2]
+        region: [us-east-1, us-west-1, ap-south-1]
+        env: [dev, prod]
 
     steps:
       - name: AWS Regions
         run: |
-          echo "AWS Regions: ${{ matrix.region }}"
-          echo "Hii This is Matrix and Node regions"
+          echo "AWS Regions: ${{ matrix.region }} and shows env: ${{ matrix.env }}"
+          echo "Hii This is Matrix and env regions"
           echo "Hii My name is Dhage Anil Kumar"
           pwd
           time
