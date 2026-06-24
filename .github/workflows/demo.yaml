@@ -18,6 +18,7 @@ jobs:
 
   Step-Level-varibables:
     runs-on: ubuntu-latest
+    needs: Simple-job
     steps:
       - name: variables
         env:
@@ -27,6 +28,25 @@ jobs:
           echo "Hii my name is Dhage Anil Kumar"
           echo "And I current address is $CITY"
           echo "And Im living in $COUNTRY"
+
+  Job-Level-Variables:
+    runs-on: ubuntu-latest
+    env:
+      VARIABLE: DHage ANil Kumar Variables
+      NAME: DHAGE ANIL KUMAR
+    needs: Step-Level-varibables
+    steps:
+      - name: Job level Variables
+        run: |
+          echo "Hiii this job is @VARIABLE level"
+          echo "Checking for second time @VARIABLE"
+          echo "My Name is $NAME"
+
+      - name: Second job level
+        run: |
+          echo "Second job level $VARIABLE"
+          echo "Verifying the third time @VARIABLE"
+          echo "My name is second name is $NAME"
 
 
 
