@@ -98,13 +98,13 @@ jobs:
     steps:
       - name: Repo-level-Variables
         run: |
-          echo "Hii This is Repo level variables $ANIL"
-          echo "Hii this second steo Repo level varibables $KUMAR"
+          echo "Hii This is Repo level variables ${{ vars.ANIL }}"
+          echo "Hii this second steo Repo level varibables ${{ vars.KUMAR }}"
 
       - name: Repo-level-Secrets
         run: |
-          echo "This is screts in file name is $FILE"
-          echo  "This is second file name is $TEXT"
+          echo "This is screts in file name is ${{ secrets.FILE }}"
+          echo  "This is second file name is ${{ secrets.TEXT }}"
         
     
 
