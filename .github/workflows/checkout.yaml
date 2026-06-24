@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the Repo
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: show the files
         run: ls -lrth
