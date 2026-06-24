@@ -1,0 +1,16 @@
+name: Matrix and Node version
+
+on: workflow_dispatch
+
+jobs:
+  Matrix-Node:
+    runs-on: ${{ matrix.anil }}
+    strategy:
+      matrix:
+        anil: [ubuntu-latest, windows-latest]
+        node: [18, 16]
+    steps:
+      - name: Print OS
+        run: |
+          echo "Running Version ${{ matrix.node }}"
+          echo "Running version ${{ matrix.anil }}"
