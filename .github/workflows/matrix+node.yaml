@@ -4,14 +4,23 @@ on: workflow_dispatch
 
 jobs:
   Matrix-Node:
-    runs-on: ${{ matrix.anil }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        anil: [ubuntu-latest, windows-latest]
-        node: [16, 18]
+        os: [ubuntu-latest, windows-latest]
+        node: [16 ,18]
+        env: [dev, prod]
+        users: [Anil, Kumar]
 
     steps:
-      - name: Print OS and version
-        run: |
-          echo "Running Version: ${{ matrix.node }}"
-          echo "Running OS: ${{ matrix.anil }}"
+      - name: Print OS
+        run: echo "Running OS: ${{ matrix.os }}"
+
+      - name: Print Node
+        run: echo "Running Node Version: ${{ matrix.node }}"
+
+      - name: Print Env
+        run: echo "Running in which Env: ${{ matrix.env"
+
+      - name: Print Users
+        run: echo "UsersName is: ${{ matrix.users }}"
