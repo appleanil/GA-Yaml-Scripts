@@ -10,7 +10,6 @@ jobs:
     steps:
       - name: Create a file
         run: echo "Hi, I'm Dhage Anil Kumar and I'm learning GitHub Actions with DevOps" > anil.txt
-        run: cat anil.txt
 
       - name: Checkout Repository
         uses: actions/checkout@v4
