@@ -71,7 +71,7 @@ jobs:
     needs: workflow-level-variables
     steps:
       - name: Create a file
-        run: echo "This is upload a artifact" artifact.txt
+        run: echo "This is upload a artifact" > artifact.txt
         
       - name: Upload Artifact
         uses: actions/checkout@v4
