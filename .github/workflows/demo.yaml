@@ -15,4 +15,23 @@ jobs:
           touch anil.txt
           echo "Hii Im Dhage Anil Kumar and Im Learning Devops with githubactions" > anil.txt
           cat anil.txt
+
+  Step-Level-varibables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: variables
+        env:
+          CITY: Adoni
+          COUNTRY: India
+        run: |
+          echo "Hii my name is Dhage Anil Kumar"
+          echo "And I current address is $CITY"
+          echo "And Im living in $COUNTRY"
+
+
+
+
+
+
+        
   
