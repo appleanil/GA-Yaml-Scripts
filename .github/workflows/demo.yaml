@@ -92,19 +92,25 @@ jobs:
         run: cat artifact.txt
 
 
-  Repo-level-varibables:
+  Repo-level-variables:
     runs-on: ubuntu-latest
-    needs: download-artifact
-    steps:
-      - name: Repo-level-Variables
-        run: |
-          echo "Hii This is Repo level variables ${{ vars.ANIL }}"
-          echo "Hii this second steo Repo level varibables ${{ vars.KUMAR }}"
 
-      - name: Repo-level-Secrets
+    steps:
+      - name: Repo Level Variables
         run: |
-          echo "This is screts in file name is ${{ secrets.FILE }}"
-          echo  "This is second file name is ${{ secrets.TEXT }}"
+          echo "Hi, this is repo-level variable: ${{ vars.ANIL }}" > anil.txt
+          cat anil.txt
+
+          echo "Hi, this is second repo-level variable: ${{ vars.KUMAR }}" > kumar.txt
+          cat kumar.txt
+
+      - name: Repo Level Secrets
+        run: |
+          echo "This secret file name is: ${{ secrets.FILE }}" > sec.txt
+          cat sec.txt
+
+          echo "This second secret file name is: ${{ secrets.TEXT }}" > cret.txt
+          cat cret.txt
         
     
 
