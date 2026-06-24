@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   Matrix-Node-Regions:
-    runs-on: ${{ matrix.region }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         region: [us-east-1, us-west-1, ap-south-1]
