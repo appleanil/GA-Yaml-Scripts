@@ -1,123 +1,108 @@
-name: Varibables, concurrency, Multi jobs
+name: Variables, Concurrency, Multi Jobs
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 concurrency:
   group: main-branch-group
   cancel-in-progress: true
 
 env:
-  BRAND: Workflow---level
-  COMPANY: Amul----Branc----workflow---level
+  BRAND: Workflow-Level
+  COMPANY: Amul-Workflow-Level
 
 jobs:
+
   Simple-job:
     runs-on: ubuntu-latest
+
     steps:
       - name: Create a file
         run: |
-          touch anil.txt
-          echo "Hii Im Dhage Anil Kumar and Im Learning Devops with githubactions" > anil.txt
+          echo "Hi I'm Dhage Anil Kumar and I'm learning DevOps with GitHub Actions" > anil.txt
           cat anil.txt
 
-  Step-Level-varibables:
+  Step-Level-Variables:
     runs-on: ubuntu-latest
     needs: Simple-job
+
     steps:
-      - name: variables
+      - name: Variables
         env:
           CITY: Adoni
           COUNTRY: India
         run: |
-          echo "Hii my name is Dhage Anil Kumar"
-          echo "And I current address is $CITY"
-          echo "And Im living in $COUNTRY"
+          echo "My name is Dhage Anil Kumar"
+          echo "Current address: $CITY"
+          echo "Country: $COUNTRY"
 
   Job-Level-Variables:
     runs-on: ubuntu-latest
+    needs: Step-Level-Variables
+
     env:
-      VARIABLE: DHage ANil Kumar Variables
+      VARIABLE: Dhage Anil Kumar Variables
       NAME: DHAGE ANIL KUMAR
-    needs: Step-Level-varibables
+
     steps:
-      - name: Job level Variables
+      - name: Job Level Variables
         run: |
-          echo "Hiii this job is $VARIABLE level"
-          echo "Checking for second time $VARIABLE"
-          echo "My Name is $NAME"
+          echo "Job variable: $VARIABLE"
+          echo "My Name: $NAME"
 
-      - name: Second job level
+      - name: Second Job Level
         run: |
-          echo "Second job level $VARIABLE"
-          echo "Verifying the third time $VARIABLE"
-          echo "My name is second name is $NAME"
+          echo "Second check: $VARIABLE"
+          echo "Name: $NAME"
 
-  workflow-level-variables:
+  Workflow-Level-Variables:
     runs-on: ubuntu-latest
     needs: Job-Level-Variables
+
     steps:
-      - name: Workflow level
+      - name: Workflow Level
         run: |
-          echo "This job is Workflow level with $BRAND"
-          echo "This second job as workflow level company name is $COMPANY"
+          echo "Brand: $BRAND"
+          echo "Company: $COMPANY"
 
-      - name: second workflow level
-        run: |
-          echo "Hii this is Dhage Anil Kumar and status is $BRAND"
-          echo "Hii this is DHage Anil Kumar and working in company is $COMPANY"
-
-  upload-artifact:
+  Upload-Artifact:
     runs-on: ubuntu-latest
-    needs: workflow-level-variables
+    needs: Workflow-Level-Variables
+
     steps:
-      - name: Create a file
-        run: echo "This is upload a artifact" > artifact.txt
-        
+      - name: Create Artifact
+        run: echo "This is an artifact file" > artifact.txt
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: artifact
           path: artifact.txt
 
-  download-artifact:
+  Download-Artifact:
     runs-on: ubuntu-latest
-    needs: upload-artifact
+    needs: Upload-Artifact
+
     steps:
-      - name: Download artifact
+      - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
           name: artifact
 
-      - name: Show th file
+      - name: Show File
         run: cat artifact.txt
 
-
-  Repo-level-variables:
+  Repo-Level-Variables:
     runs-on: ubuntu-latest
+    needs: Download-Artifact
 
     steps:
-      - name: Repo Level Variables
+      - name: Repository Variables
         run: |
-          echo "Hi, this is repo-level variable: ${{ vars.ANIL }}" > anil.txt
-          cat anil.txt
+          echo "Variable ANIL: ${{ vars.ANIL }}"
+          echo "Variable KUMAR: ${{ vars.KUMAR }}"
 
-          echo "Hi, this is second repo-level variable: ${{ vars.KUMAR }}" > kumar.txt
-          cat kumar.txt
-
-      - name: Repo Level Secrets
+      - name: Repository Secrets
         run: |
-          echo "This secret file name is: ${{ secrets.FILE }}" > sec.txt
-          cat sec.txt
-
-          echo "This second secret file name is: ${{ secrets.TEXT }}" > cret.txt
-          cat cret.txt
-        
-    
-
-
-
-
-
-
-        
-  
+          echo "Secret FILE: ${{ secrets.FILE }}"
+          echo "Secret TEXT: ${{ secrets.TEXT }}"
