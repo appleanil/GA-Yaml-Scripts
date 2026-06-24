@@ -14,13 +14,8 @@ jobs:
 
     steps:
       - name: Print OS
-        run: echo "Running OS: ${{ matrix.os }}"
-
-      - name: Print Node
-        run: echo "Running Node Version: ${{ matrix.node }}"
-
-      - name: Print Env
-        run: echo "Running in which Env: ${{ matrix.env }}"
-
-      - name: Print Users
-        run: echo "UsersName is: ${{ matrix.users }}"
+        run: |
+          echo "Running OS: ${{ matrix.os }}"
+          echo "Running Node Version: ${{ matrix.node }}"
+          echo "Running in which Env: ${{ matrix.env }}"
+          echo "UsersName is: ${{ matrix.users }}"
