@@ -1,10 +1,12 @@
-name: Java set up matrix
+name: Java Setup Matrix
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   Java-setup-Matrix:
     runs-on: ${{ matrix.os }}
+
     strategy:
       matrix:
         java: [11, 12]
@@ -20,6 +22,6 @@ jobs:
 
       - name: Display Matrix
         run: |
-          echo "Java-version: ${{ matrix.java }}"
-          echo "Java env: ${{ matrix.env }}"
-          echo "Java-OS: ${{ matrix.os }}"
+          echo "Java Version: ${{ matrix.java }}"
+          echo "Environment: ${{ matrix.env }}"
+          echo "Operating System: ${{ matrix.os }}"
