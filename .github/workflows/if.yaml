@@ -17,6 +17,6 @@ jobs:
     steps:
     - name: Deploy the application
       run: |
-        if:${{ github.ref == 'refs/heads/main' }}
+        if:${{ github.ref == 'refs/heads/master' }}
         echo "Deploying the application"
         echo "Deployed done"
