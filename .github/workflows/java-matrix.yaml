@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   Java-Set-up-Matrix:
-    runs-on: ${{ matrix.java }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         java: [11, 17]
