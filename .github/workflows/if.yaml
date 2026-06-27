@@ -1,0 +1,22 @@
+name: IF expression on GithubActions
+
+on: workflow_dispatch
+
+jobs:
+  Build-Job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build the application
+        run: |
+          echo "Building the application..."
+          echo "Build is done"
+
+  Deploy-Job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy the application
+      run: |
+        if:${{ github.ref == 'refs/heads/main' }}
+        echo "Deploying the application"
+        echo "Deployed done"
