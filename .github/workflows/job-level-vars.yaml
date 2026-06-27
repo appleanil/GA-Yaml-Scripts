@@ -1,0 +1,26 @@
+name: Job Level Vars
+
+on: workflow_dispatch
+
+jobs:
+  Job-Level-Vars:
+    runs-on: ubuntu-latest
+    env:
+      NAME: Dhage Anil Kumar
+      COMPANY: Ranstad
+      Role: Auditor and QA
+
+    steps:
+      - name: Job level vars
+        run: |
+          echo "My Name is: $NAME"
+          echo "Im working in: $COMPANY"
+          echo "Im suppoting to: $ROLE"
+
+      - name: Second job level vars
+        run: |
+          echo "Iam working in: $PROJECT"
+          echo "Im supporting to: $ENV"
+
+      - name: Single line job level vars
+        run: echo "My name is $NAME, works in $COMPANY, role is $ROLE and project is $PROJECT with supports $ENV"
