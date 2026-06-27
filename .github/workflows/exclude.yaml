@@ -16,4 +16,6 @@ jobs:
             node: 18
     steps:
       - name: Display the OS
-        run: echo "OS: ${{ matrix.os }} and version: ${{ matrix.node }}"
+        run: |
+          echo "OS: ${{ matrix.os }}"
+          echo "version: ${{ matrix.node }}"
