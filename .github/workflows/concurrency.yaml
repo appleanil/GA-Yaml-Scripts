@@ -1,0 +1,17 @@
+name: Concurreny job
+
+on: workflow_dispatch
+
+concurrency:
+  group: main-branch-group
+  cancel-in-progress: true
+
+jobs:
+  Concurrency-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Concurrency jobs
+        run: |
+          echo "Starting.."
+          echo "sleep 30s"
+          echo "finished..."
