@@ -1,0 +1,22 @@
+name: Include matrix job
+
+on: workflow_dispatch
+
+jobs:
+  Include-Matrix-Job:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [11, 17]
+        include:
+          - os: ubuntu-latest
+            node: 17
+            message: optimized-build
+
+    steps:
+      - name: print OS
+        run: |
+          echo "Java-OS: ${{ matrix.os }}"
+          echo "Java-Version: ${{ matrix.node }}"
+          echo "Java-Message: ${{ matrix.message }}"
