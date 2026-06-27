@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Concurrency jobs
-        run: echo "Starting.."
-        run: echo "sleep 30"
-        run: echo "finished..."
+        run: |
+          echo "Starting.."
+          sleep 30
+          echo "finished..."
