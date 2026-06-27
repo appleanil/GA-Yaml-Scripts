@@ -1,0 +1,30 @@
+name: Step level vars
+
+on: workflow_dispatch
+
+jobs:
+  Step-Level-Vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step level vars
+        env:
+          NAME: Dhage Anil Kumar
+          COMPANY: Ranstad
+          ROLE: Devops
+        run: |
+          echo "Im $NAME"
+          echo "Working in $COMPANY"
+          echo "My Role is $ROLE"
+
+      - name: Second step level vars
+        env:
+          PROJECT: GithubActions
+          ENV: Prod
+        run: |
+          echo "My project name is $PROJECT"
+          echo "And i supporting for $ENV"
+
+      - name: Single line vars
+        run: |
+          echo "My name is $NAME, working in $COMPANY and role is $ROLE"
+          echo "Im working in $PROJECT and supporting in $ENV"
