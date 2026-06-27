@@ -1,0 +1,17 @@
+name: Repo level vars
+
+on: workflow_dispatch
+
+jobs:
+  Repo-Level-Vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo level vars
+        run: |
+          echo "My Secret is: $SEC"
+          echo "My another Secret is: $CREAT"
+
+      - name: Repo level Vars Second
+        run: |
+          echo "My Name is: $NAME"
+          echo "My ROle is: $VARS"
