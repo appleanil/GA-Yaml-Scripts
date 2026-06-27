@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   Parellel-fail-Fast:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
