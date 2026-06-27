@@ -1,17 +1,19 @@
-name: Repo level vars
+name: Repo Level Secrets and Variables
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   Repo-Level-Vars:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Repo level vars
+      - name: Display Repository Secrets
         run: |
           echo "My Secret is: ${{ secrets.SEC }}"
-          echo "My another Secret is: ${{ secrets.CREAT }}"
+          echo "My Another Secret is: ${{ secrets.CREAT }}"
 
-      - name: Repo level Vars Second
+      - name: Display Repository Variables
         run: |
           echo "My Name is: ${{ vars.NAME }}"
-          echo "My ROle is: ${{ vars.VARS }}"
+          echo "My Role is: ${{ vars.VARS }}"
