@@ -9,7 +9,8 @@ jobs:
     strategy:
       fail-fast: false
       max-parallel: 2
-      os: [1, 2, 3, 4, 5]
+      matrix:
+        os: [1, 2, 3, 4, 5]
 
     steps:
       - name: Checking for parallel
