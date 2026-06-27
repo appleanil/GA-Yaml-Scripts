@@ -1,0 +1,17 @@
+name: Simple Matrix job
+
+on: workflow_dispatch
+
+jobs:
+  Simple-Matrix:
+    runs-on: ${{ matrix.anil }}
+    strategy:
+      matrix:
+        anil: [ubuntu-latest, windows-latest]
+        node: [15, 16]
+
+    steps:
+      - name: Simple matrix
+        run: |
+          echo "Running OS in: ${{ matrix.anil }}"
+        
