@@ -13,5 +13,5 @@ jobs:
       - name: Concurrency jobs
         run: |
           echo "Starting.."
-          echo "sleep 30s"
+          echo "sleep 30"
           echo "finished..."
