@@ -59,4 +59,8 @@
     * Matrix max-parallel configuration
     * Matrix strategy for Build, Test, and Deploy pipelines
     * Matrix strategy for multi-region deployments
+    * Context
+    * IF expression (nothing but conditions, Run and skip Deployment Job Only on Main/dev/feature Branch, if: ${{ github.ref == 'refs/heads/main' }})
+    * Workflow Filter (paths and paths-ignore, branch and branch-ignore, combination of branch and paths)
+    * Activity Types (PR read,edit,closed,opened,labeled,review....) 
 
