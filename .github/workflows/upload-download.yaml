@@ -1,0 +1,30 @@
+name: Upload and Download Artifact
+
+on: workflow_dispatch
+
+jobs:
+  Upload-Artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enter the data
+        run: |
+          echo "Hii My name is Dhage Anil Kumar and Im learning Devops with GithubActions" > artifact.txt
+          cat artifact.txt
+
+      - name: Upload the Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: datafile
+          path: artifact.txt
+
+  Download-Artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: datafile
+
+      - name: Display the artifact
+        run: cat artifact.txt
+          
