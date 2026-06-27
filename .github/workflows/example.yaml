@@ -1,41 +1,62 @@
-name: Build Test Deploy Matrix Pipeline
+name: Build, Test and Deploy pipeline code
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
-  Build-Test-Deploy:
+  Build-Test-Deploy-Matrix:
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        java: [11, 17]
-        environment: [dev, qa]
+        node: [11, 17]
+        env: [dev, prod]
 
     steps:
-      - name: Checkout Source Code
+      - name: Checkout the Code
         uses: actions/checkout@v4
 
-      - name: Setup Java
+      - name: Set-Up Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: ${{ matrix.java }}
 
-      - name: Build Application
+      - name: Build the Artifact
         run: |
-          echo "Building application..."
-          echo "OS: ${{ matrix.os }}"
-          echo "Java Version: ${{ matrix.java }}"
-          echo "Environment: ${{ matrix.environment }}"
+          echo "java-OS: ${{ matrix.os }}"
+          echo "java-Version: ${{ matrix.node }}"
+          echo "java-env: ${{ matrix.env }}"
+          echo "Building the artifact is done"
 
-      - name: Run Unit Tests
+      - name: Testing the Application
         run: |
-          echo "Executing Unit Tests..."
-          echo "Tests Passed Successfully"
+          echo "testing the application..."
+          echo "test is done."
 
-      - name: Deploy Application
+      - name: Deploying the Application
         run: |
-          echo "Deploying application to ${{ matrix.environment }}"
-          echo "Deployment Successful"
+          echo "Deploying the application..."
+          echo "Deployed is done"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
