@@ -1,0 +1,41 @@
+name: Build-Test-Deploy Matrix
+
+on: workflow_dispatch
+
+jobs:
+  Build-Test-Deploy-Matrix:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        java: [11, 17]
+        env: [dev, prod]
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Set-up the java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+
+      - name: Build the Application
+        run: |
+          echo "Building the Application..."
+          echo "Java-OS is: ${{ matrix.os }}"
+          echo "Java-Version is: ${{ matrix.java }}"
+          echo "Java-env is: ${{ matrix.env }}"
+          echo "Building the Application is done."
+
+      - name: Test the Application
+        run: |
+          echo "Testing the Application..."
+          echo "Test is done"
+
+      - name: Deploying the Application
+        run: |
+          echo "Deploying the Application..."
+          echo "Deployed is done"
