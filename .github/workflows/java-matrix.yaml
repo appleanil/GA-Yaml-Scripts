@@ -1,0 +1,25 @@
+name: Java set up matrix
+
+on: workflow_dispatch
+
+jobs:
+  Java-setup-Matrix:
+    runs-on: ${{ matrix.java }}
+    strategy:
+      matrix:
+        java: [11, 12]
+        env: [dev, prod]
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+
+      - name: Display Matrix
+        run: |
+          echo "Java-version: ${{ matrix.java }}"
+          echo "Java env: ${{ matrix.env }}"
+          echo "Java-OS: ${{ matrix.os }}"
