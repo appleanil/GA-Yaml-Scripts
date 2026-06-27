@@ -1,0 +1,17 @@
+name: Parellel fail fast fail
+
+on: workflow_dispatch
+
+jobs:
+  Parellel-fail-Fast:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      os: [1, 2, 3, 4, 5]
+
+    steps:
+      - name: Checking for parallel
+        run: |
+          echo "Java-version is: ${{ matrix.os }}"
