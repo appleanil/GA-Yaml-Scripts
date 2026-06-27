@@ -5,11 +5,12 @@ on: workflow_dispatch
 jobs:
   Exclude-Matrix:
     runs-on: ${{ matrix.os }}
+    
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
         node: [11, 18]
-
+        
         exclude:
           - os: windows-latest
             node: 18
