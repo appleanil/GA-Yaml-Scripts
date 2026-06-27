@@ -25,7 +25,7 @@ jobs:
       - name: Build the Artifact
         run: |
           echo "java-OS: ${{ matrix.os }}"
-          echo "java-Version: ${{ matrix.node }}"
+          echo "java-Version: ${{ matrix.java }}"
           echo "java-env: ${{ matrix.env }}"
           echo "Building the artifact is done"
 
