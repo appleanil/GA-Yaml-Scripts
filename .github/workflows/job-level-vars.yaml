@@ -8,7 +8,7 @@ jobs:
     env:
       NAME: Dhage Anil Kumar
       COMPANY: Ranstad
-      Role: Auditor and QA
+      ROLE: Auditor and QA
       PROJECT: Github Actions
       ENV: Prod
 
@@ -17,7 +17,7 @@ jobs:
         run: |
           echo "My Name is: $NAME"
           echo "Im working in: $COMPANY"
-          echo "Im supporting to: $ROLE"
+          echo "My Role is: $ROLE"
 
       - name: Second job level vars
         run: |
