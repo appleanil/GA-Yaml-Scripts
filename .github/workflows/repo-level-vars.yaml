@@ -8,10 +8,10 @@ jobs:
     steps:
       - name: Repo level vars
         run: |
-          echo "My Secret is: $SEC"
-          echo "My another Secret is: $CREAT"
+          echo "My Secret is: ${{ secrets.SEC }}"
+          echo "My another Secret is: ${{ secrets.CREAT }}"
 
       - name: Repo level Vars Second
         run: |
-          echo "My Name is: $NAME"
-          echo "My ROle is: $VARS"
+          echo "My Name is: ${{ vars.NAME }}"
+          echo "My ROle is: ${{ vars.VARS }}"
