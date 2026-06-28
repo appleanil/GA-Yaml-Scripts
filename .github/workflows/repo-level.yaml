@@ -8,11 +8,11 @@ jobs:
     steps:
       - name: Repo Level vars
         run: |
-          echo "My name is: $NAME"
-          echo "Im working in: $COMPANY"
-          echo "My role is: $ROLE"
+          echo "My name is: ${{ vars.NAME }}"
+          echo "Im working in: ${{ vars.COMPANY }}"
+          echo "My role is: ${{ vars.ROLE }}"
 
       - name: Secrets Vars
         run: |
-          echo "My salary is: $SAL"
-          echo "My incremental salary is: $INCREMENTAL"
+          echo "My salary is: ${{ secrets.SAL }}"
+          echo "My incremental salary is: ${{ secrets.INCREMENTAL }}"
