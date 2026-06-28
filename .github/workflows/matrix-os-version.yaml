@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: print the OS
-        run: "Running in: ${{ matrix.os }}"
+        run: echo "Running on ${{ matrix.os }}"
 
       - name: Print Versions
-        run: "Versions: ${{ matrix.version }}"
+        run: echo "Versions ${{ matrix.version }}"
