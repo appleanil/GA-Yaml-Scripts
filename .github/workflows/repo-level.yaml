@@ -1,18 +1,20 @@
 name: Repo level Github Actions
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   Repo-Level-Vars:
     runs-on: ubuntu-latest
-    steps:
-      - name: Repo Level vars
-        run: |
-          echo "NAME=${{ vars.NAME }}"
-          echo "COMPANY=${{ vars.COMPANY }}"
-          echo "ROLE=${{ vars.ROLE }}"
 
-      - name: Secrets Vars
+    steps:
+      - name: Repo Level Vars
         run: |
-          SAL: ${{ secrets.SAL }}
-          INCREMENTAL: ${{ secrets.INCREMENTAL }}
+          echo "My Name is: ${{ vars.NAME }}"
+          echo "I'm working in: ${{ vars.COMPANY }}"
+          echo "My Role is: ${{ vars.ROLE }}"
+
+      - name: Repository Secrets
+        run: |
+          echo "My Salary is: ${{ secrets.SAL }}"
+          echo "My Incremental Salary is: ${{ secrets.INCREMENTAL }}"
