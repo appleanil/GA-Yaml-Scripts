@@ -1,0 +1,30 @@
+name: Workflow level jobs in Github Actions
+
+on: workflow_dispatch
+
+env:
+  Name: Dhage Anil Kumar
+  Company: Ranstand
+  Role: Auditor
+
+jobs:
+  Workflow-level:
+    runs-on: ubuntu-latest
+    env:
+      City: Adoni
+      Country: India
+    steps:
+      - name: Workflow level vars
+        run: |
+          echo "My name is: $Name"
+          echo "Im working in: $Company"
+          echo "My Role is: $Role"
+
+      - name: Job level vars
+        run: echo "Im living in $City and $Country"
+
+      - name: Step level vars
+        env:
+          Brand: Slik
+          Com: ITC
+        run: echo "Im smoking the slik from $Com company"
