@@ -1,0 +1,21 @@
+name: Exclude Matrix Stragety
+
+on: workflow_dispatch
+
+jobs:
+  Exclude:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [us-east-1, us-west-2]
+        version: [11, 18]
+        exclude:
+          - os: us-east-1
+            version: 18
+            message: optimized-build
+    steps:
+      - name: Exclude matrix
+        run: |
+          echo "OS: ${{ matrix.os }}"
+          echo "version: ${{ matrix.version }}"
+          echo "message: ${{ matrix.message }}"
