@@ -1,0 +1,22 @@
+name: Concurrency
+
+on: workflow_dispatch
+
+concurrency:
+  group: main-master-group
+  cancel-in-progress: false
+
+jobs:
+  Concurrency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Concurrency
+        run: |
+          echo "fghjkl"
+          pwd
+          ls -lrth
+          sleep 30
+
+      - name: second concurrency
+        run: echo "sdfdfv"
+    
