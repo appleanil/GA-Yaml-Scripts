@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: Step level vars
         env:
-          $NAME: Dhage Anil Kumar
-          $COMPANY: Ranstand
-          $ROLE: Auditor
+          NAME: Dhage Anil Kumar
+          COMPANY: Ranstand
+          ROLE: Auditor
         run: |
           echo "My Name is: $NAME"
           echo "Im Working in: $COMPANY"
