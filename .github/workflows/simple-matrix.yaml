@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: Simple Matrix
-        run: Print OS: ${{ matrix.os }}
+        run: echo "Print OS: ${{ matrix.os }}"
