@@ -8,11 +8,11 @@ jobs:
     steps:
       - name: Repo Level vars
         run: |
-          echo "My name is: $Name"
-          echo "Im working in: $Company"
-          echo "My role is: $Role"
+          echo "My name is: $NAME"
+          echo "Im working in: $COMPANY"
+          echo "My role is: $ROLE"
 
       - name: Secrets Vars
         run: |
-          echo "My salary is: $Sal"
-          echo "My incremental salary is: $Incremental"
+          echo "My salary is: $SAL"
+          echo "My incremental salary is: $INCREMENTAL"
