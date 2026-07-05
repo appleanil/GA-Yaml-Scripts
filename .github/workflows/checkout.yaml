@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
+      - name: Simple check out job
+        uses: actions/checkout@v4
 
       - name: Simple file check out
         run: cat Github-Actions-practice.txt
