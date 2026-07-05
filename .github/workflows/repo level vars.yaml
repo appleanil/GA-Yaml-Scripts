@@ -15,5 +15,5 @@ jobs:
 
       - name: Secrets
         run: |
-          echo "${{ secrets.sec }}"
-          echo "${{ secrets.crets }}"
+          echo "${{ secrets.SEC }}"
+          echo "${{ secrets.CRETS }}"
