@@ -1,0 +1,18 @@
+name: Workflow level vars
+
+on: workflow_dispatch
+env:
+  Name: Dhage Anil Kumar
+  Company: ranstand
+  Role: Auditor
+
+jobs:
+  Workflow-Level-Vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display the basic Details
+        run: |
+          echo "$Name"
+          echo "Company"
+          echo "$Role"
