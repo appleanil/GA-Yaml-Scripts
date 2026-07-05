@@ -3,8 +3,16 @@ name: Upload and Download Artifact
 on: workflow_dispatch
 
 jobs:
+  Checkout-Job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+        
   Upload-Artifact:
     runs-on: ubuntu-latest
+    needs: Checkout-Job
 
     steps:
       - name: This is the Upload the artifact
