@@ -1,0 +1,19 @@
+name: Simple Single Job
+
+on: workflow_dispatch
+
+jobs:
+  Simple-Single-Job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Simple Single Job
+        run: |
+          echo "Hii My name is Dhage Anil Kumar" > anil.txt
+          cat anil.txt
+          echo "And also im bad fucker" > kumar.txt
+          cat kumar.txt
+          ls -lrth
+          pwd
+          date
+          uptime
