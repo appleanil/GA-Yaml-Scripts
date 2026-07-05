@@ -1,0 +1,19 @@
+name: Repo Level vars
+
+on: workflow_dispatch
+
+jobs:
+  Repo-Level-Vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display the basic detaile and secrets
+        run: |
+          echo ${{ vars.NAME }}
+          echo ${{ vars.COMPANY }}
+          echo ${{ vars.ROLE }}
+
+      - name: Secrets
+        run: |
+          echo "${{ secrets.sec }}"
+          echo "${{ secrets.crets }}"
