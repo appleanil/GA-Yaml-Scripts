@@ -10,19 +10,20 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Upload the Artifact
-        uses: actions/uploadartifact@v4
+        uses: actions/upload-artifact@v4
         with:
-          path: datafile
-          file: Github-Actions-practice.txt
+          name: datafile
+          path: Github-Actions-practice.txt
 
   Download-Artifact:
     runs-on: ubuntu-latest
+    needs: Upload-the-Artifact
 
     steps:
       - name: Donwload the Artifact
-        uses: actions/downloadartifact@v4
+        uses: actions/download-artifact@v4
         with:
-          path: datafile
+          name: datafile
 
       - name: Display the Artifact
         run: cat Github-Actions-practice.txts
