@@ -15,11 +15,11 @@ jobs:
     steps:
       - name: Job Level Vars
         run: |
-            My Name is: $Name
-            Working in: $Company
-            Role is: $Role
+            echo "My Name is: $Name"
+            echo "Working in: $Company"
+            echo "Role is: $Role"
 
       - name: Details
         run: |
-          My country is: $Country
-          My State is: $State
+          echo "My country is: $Country"
+          echo "My State is: $State"
