@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: Display the Regions
-        run: running in ${{ matrix.region }}
+        run: echo "running in ${{ matrix.region }}"
