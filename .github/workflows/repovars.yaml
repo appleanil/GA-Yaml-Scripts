@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Name
         run: |
-          echo "My Name is: $Name"
+          echo "My Name is: ${{ secrets.Name }}"
           echo "My COuntry Name is: $Country"
 
   Company-Vars:
@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Company
         run: |
-          echo "My Company name is: $Company"
+          echo "My Company name is: ${{ vars.Company }}"
 
   Role-Vars:
     runs-on: ubuntu-latest
@@ -32,5 +32,5 @@ jobs:
         env:
           State: Andhra Pradesh
         run: |
-          echo "My Role is: $Role"
+          echo "My Role is: $ {{ vars.Role }}"
           echo "My State Name is: $State"
