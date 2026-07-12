@@ -1,0 +1,33 @@
+name: Workflow Level Vars
+
+on: workflow_dispatch
+
+env:
+  Name: Dhage Anil Kumar
+  Company: Ranstad
+  Role: Auditor
+  
+jobs:
+  Name-Vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Name
+        run: | 
+          echo "My Name is: $Name"
+
+  Company-Vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Company
+        run: |
+          echo "My Company name is: $Company"
+
+  Role-vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Role
+        run: |
+          echo "My Role is: $Role"
