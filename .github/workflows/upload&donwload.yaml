@@ -1,0 +1,29 @@
+name: Upload and Download Artifact
+
+on: workflow_dispatch
+
+jobs:
+  Upload-the-Artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Upload the Artifact
+        uses: actions/uploadartifact@v4
+        with:
+          path: datafile
+          file: Github-Actions-practice.txt
+
+  Download-Artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Donwload the Artifact
+        uses: actions/downloadartifact@v4
+        with:
+          path: datafile
+
+      - name: Display the Artifact
+        run: cat Github-Actions-practice.txts
+  
