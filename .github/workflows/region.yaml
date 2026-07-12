@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        region: [india, usa]
+        region: [chrome, facebook]
 
     steps:
       - name: Display the Region
