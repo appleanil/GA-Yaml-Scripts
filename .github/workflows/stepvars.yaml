@@ -1,0 +1,18 @@
+name: Step Level vars
+
+on: workflow_dispatch
+
+jobs:
+  Step-Level-Vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step Level Vars
+        env:
+          Name: Dhage Anil Kumar
+          Company: ranstand
+          Role: Auditor
+        run: |
+             echo "Hii My Name is $Name, working in $Company and my role is $Role" > anil.txt
+             ls -lrth
+             cat anil.txt
