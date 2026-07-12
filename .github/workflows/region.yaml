@@ -1,14 +1,16 @@
-name: Matrix with region
+name: Matrix with Region
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   Matrix-Region:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        region: [chrome, facebook]
+        region: [india, usa]
 
     steps:
-      - name: Display the Regions
-        run: echo "running in ${{ matrix.region }}"
+      - name: Display the Region
+        run: echo "Running in ${{ matrix.region }}"
