@@ -26,5 +26,5 @@ jobs:
           name: datafile
 
       - name: Display the Artifact
-        run: cat Github-Actions-practice.txts
+        run: cat Github-Actions-practice.txt
   
