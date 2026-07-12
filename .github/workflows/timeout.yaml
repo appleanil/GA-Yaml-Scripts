@@ -1,0 +1,16 @@
+name: Time out jobs
+
+on: workflow_dispatch
+
+jobs:
+  Timeout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1 
+
+    steps:
+      - name: Timeout job
+        timeout-minutes: 2
+        run: |
+          echo "hii"
+          sleep 30s
+          
