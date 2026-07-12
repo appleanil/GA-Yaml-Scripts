@@ -1,0 +1,36 @@
+name: Repo Level Vars
+
+on: workflow_dispatch
+
+jobs:
+  Name-Vars:
+    runs-on: ubuntu-latest
+    env:
+      Country: India
+
+    steps:
+      - name: Name
+        run: |
+          echo "My Name is: $Name"
+          echo "My COuntry Name is: $Country"
+
+  Company-Vars:
+    runs-on: ubuntu-latest
+    needs: Name-Vars
+
+    steps:
+      - name: Company
+        run: |
+          echo "My Company name is: $Company"
+
+  Role-Vars:
+    runs-on: ubuntu-latest
+    needs: Company-Vars
+
+    steps:
+      - name: Role
+        env:
+          State: Andhra Pradesh
+        run: |
+          echo "My Role is: $Role"
+          echo "My State Name is: $State"
