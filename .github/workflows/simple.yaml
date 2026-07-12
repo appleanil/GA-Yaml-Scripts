@@ -7,5 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simple job
-        run: echo "Hii Im Dhage Anil Kumar" > anil.txt
-            cat anil.txt
+        run: |
+             echo "Hii Im Dhage Anil Kumar" > anil.txt
+             cat anil.txt
