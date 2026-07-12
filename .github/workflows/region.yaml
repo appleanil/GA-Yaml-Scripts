@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        region: [chrome, facebook]
+        region: [xxnx, xhamster]
 
     steps:
       - name: Display the regions
