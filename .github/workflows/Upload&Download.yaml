@@ -1,0 +1,29 @@
+name: Upload and Download Job
+
+on: workflow_dispatch
+
+jobs:
+  Upload-Stage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Firstly we need to check the code
+        uses: actions/checkout@v4
+
+      - name: Upload the file
+        uses: actions/upload-artifact@v4
+        with:
+          name: datafile
+          path: Github-Actions-practice.txt
+
+  Download-Stage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download the Artifact
+        uses: actions/download-artifact@v4
+        with:
+          path: datafile
+
+      - name: Display the artifact
+        run: cat Github-Actions-practice.txt
