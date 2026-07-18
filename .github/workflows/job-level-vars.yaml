@@ -1,0 +1,21 @@
+name: Job Level vars
+
+on: workflow_dispatch
+
+jobs:
+  Job-Level-Vars:
+    runs-on: ubuntu-latest
+    env:
+      Name: Dhage Anil Kumar
+      Company: Ranstand
+      Role: Auditor
+
+    steps:
+      - name: Job Level Vars
+        run: |
+          echo "Employee Name is: $Name"
+
+      - name: Job level vars comapny and role details
+        run: |
+          echo "Employee company name is: $Company"
+          echo "Employee Role is: $Role"
