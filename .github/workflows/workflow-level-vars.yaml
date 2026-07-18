@@ -1,0 +1,39 @@
+name: Workflow Level vars
+
+on: workflow_dispatch
+env:
+  Name: Dhage Anil Kumar
+  Company: Ranstand
+  Role: Auditor
+
+jobs:
+  Workflow-level-vars:
+    runs-on: ubuntu-latest
+    env:
+      Country: India
+      State: Andhra Pradesh
+
+    steps:
+      - name: Workflow level vars
+        run: |
+          echo "Employee Name is: $Name"
+
+      - name: Step level vars
+        env:
+          Likes: Sex and Fucks
+          Pornstars: Brandi Love and Recceba More and Reagon Foxx
+        run: |
+          echo "Employee likes are: $Likes"
+          echo "Employee Pornstars: $Pornstars"
+          echo "Employee Country is: $Country"
+          echo "Employee lives in: &State"
+
+  Second-Workflow-vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checks same for all vars in workflows
+        run: |
+          echo "Employee Company Name is: $Name"
+          echo "Employee Role is: $Role"
+          
