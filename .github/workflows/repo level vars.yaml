@@ -8,15 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Display Repository Secret
-        run: |
-          echo "Employee Name is: ${{ secrets.NAME }}"
-
-  repo-level-variables:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Display Repository Variables
-        run: |
-          echo "Employee Company is: ${{ vars.COMPANY }}"
-          echo "Employee Role is: ${{ vars.ROLE }}"
+     - name: Test Variables
+       run: |
+          echo "COMPANY=${{ vars.COMPANY }}"
+          echo "ROLE=${{ vars.ROLE }}"
+          echo "Name=${{ secrets.NAME }}"
+          
