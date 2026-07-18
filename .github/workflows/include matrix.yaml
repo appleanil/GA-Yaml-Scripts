@@ -1,0 +1,23 @@
+name: Matrix include OS and Node
+
+on: workflow_dispatch
+
+jobs:
+  Include:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [16, 18]
+        include:
+          - os: ubuntu-latest
+            node: 18
+            message: Message included
+
+    steps:
+      - name: Matric include stargetty
+        run: |
+          echo "Running on: ${{ matrix.os }}"
+          echo "version is: ${{ matrix.node }}"
+          echo "Message is: ${{ matrix.message }}"
