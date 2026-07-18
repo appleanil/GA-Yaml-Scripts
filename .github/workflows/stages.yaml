@@ -1,0 +1,31 @@
+name: Three stages
+
+on: workflow_dispatch
+
+jobs:
+  Build-stage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: First step is Build the Application
+        run: |
+          echo "Building the artifact..."
+          echo "done"
+
+  Test-Stage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Secong build stage is Test the Application
+        run: |
+          echo "Testing the artifact..."
+          echo "done"
+
+  Deploy-Stage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Third Stage is Deploy the Application
+        run: |
+          echo "Deploy the application..."
+          echo "done"
