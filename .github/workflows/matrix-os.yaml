@@ -1,0 +1,16 @@
+name: Matrix OS
+
+on: workflow_dispatch
+
+jobs:
+  Matrix:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Matrix OS
+        run: |
+          echo "Running on: ${{ matrix.os }}"
