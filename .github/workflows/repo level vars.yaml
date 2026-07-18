@@ -1,0 +1,23 @@
+name: Repo level vars
+
+on: workflow_dispatch
+
+jobs:
+  Repo-Level-Vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repo Level Vars
+        run: |
+          echo "Employee Name is: $Name"
+
+  Second-Repo-Level-Vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Second level vars in Repo
+        run: |
+          echo "Employee Company is: $Company"
+          echo "Employee Role is: $Role"
+
+          
