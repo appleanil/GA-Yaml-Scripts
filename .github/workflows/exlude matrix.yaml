@@ -13,11 +13,11 @@ jobs:
         exclude:
           - os: ubuntu-latest
             node: 16
-            Message: Message is ubuntu-latest, 16 is removed
+            message: Message is ubuntu-latest, 16 is removed
 
     steps:
       - name: Matrix with exclude
         run: |
           echo "Running on: ${{ matrix.os }}"
           echo "version is: ${{ matrix.node }}"
-          echo "Message is: ${{ matrix.Message }}"
+          echo "Message is: ${{ matrix.message }}"
