@@ -1,0 +1,14 @@
+name: Simple checkout job
+
+on: workflow_dispatch
+
+jobs:
+  Simple-Checkout:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Simple checkout
+        uses: actions/checkout@v4
+
+      - name: Simple code checkout
+        run: cat Github-Actions-practice.txt
