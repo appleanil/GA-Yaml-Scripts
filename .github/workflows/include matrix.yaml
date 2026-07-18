@@ -12,8 +12,12 @@ jobs:
         node: [16, 18]
         include:
           - os: ubuntu-latest
-            node: 18, 16
+            node: 18
             message: Message included
+
+          - os: windows-latest
+            node: 18
+            message: Message in windows
 
     steps:
       - name: Matric include stargetty
