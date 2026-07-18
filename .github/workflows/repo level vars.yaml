@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Repo Level Vars
         run: |
-          echo "Employee Name is: ${{ secrets.Name }}"
+          echo "Employee Name is: ${{ secrets.NAME }}"
 
   Second-Repo-Level-Vars:
     runs-on: ubuntu-latest
@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Second level vars in Repo
         run: |
-          echo "Employee Company is: ${{ vars.Company }}"
-          echo "Employee Role is: ${{ vars.Role }}"
+          echo "Employee Company is: ${{ vars.COMPANY }}"
+          echo "Employee Role is: ${{ vars.ROLE }}"
 
           
