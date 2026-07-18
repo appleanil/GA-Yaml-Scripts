@@ -12,7 +12,7 @@ jobs:
         node: [16, 18]
         include:
           - os: ubuntu-latest
-            node: 18
+            node: 18, 16
             message: Message included
 
     steps:
