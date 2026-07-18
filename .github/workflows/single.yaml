@@ -1,0 +1,12 @@
+name: Github single job
+
+on: workflow_dispatch
+
+jobs:
+  Single-Job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Writes a simple single job
+        run: |
+          echo "hii this is single job"
